@@ -1,0 +1,304 @@
+{
+  "run_id": "run-1779492508793",
+  "job_index": 1,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 3,
+    "archetype": "calculator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Aide les particuliers à structurer leur portefeuille d'investissement pour maximiser le rendement tout en maî…",
+    "notes": "Déterminez la répartition idéale de votre portefeuille d'investissements (actions, obligations, immobilier, etc.) en fonction de votre profil de risque, de vos objectifs financiers et de l'…\nCible les investisseurs novices ou intermédiaires souhaitant une approche structurée et personnalisée. Fonctionnalités de simulation et de suivi.",
+    "import_notes": "",
+    "growth_job_id": "",
+    "growth_slug": "",
+    "growth_kind": "",
+    "external_site_request_id": "",
+    "external_client_ref": "",
+    "external_source_label": "",
+    "dashboard_mode": "builder",
+    "network_site_format": "forum",
+    "network_primary_topic": "",
+    "network_primary_geo": "",
+    "network_domain_pool": "forum-de-jeu.shop",
+    "network_hosting_pool": "4vps:netoper | server_id=447345 | ip=5.253.59.18 | ssh_user=root | ssh_port=22",
+    "network_dns_strategy": "auto_pool_assign",
+    "network_domain_flow": "manual",
+    "network_content_strategy": "",
+    "network_model_concept": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_seo": "google/gemini-2.5-flash-lite:nitro",
+    "network_model_build": "google/gemini-2.5-flash",
+    "network_model_qa": "anthropic/claude-haiku-4.5",
+    "network_model_growth": "google/gemini-2.5-flash-lite:nitro",
+    "network_blueprint_id": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "render",
+    "requested_publish_target": "render",
+    "provider_space_id": "provider-space",
+    "provider_space_name": "Provider space",
+    "allow_url_fallback": false,
+    "railway_project_id_override": "",
+    "railway_environment_id_override": "",
+    "railway_service_id_override": "",
+    "railway_service_name_override": "",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "calculator",
+      "generator",
+      "tool"
+    ],
+    "forced_design_theme": "ledger-slate",
+    "forced_structure_preset": "precision-bento",
+    "site_idea_title": "Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers",
+    "site_idea_summary": "Déterminez la répartition idéale de votre portefeuille d'investissements (actions, obligations, immobilier, etc.) en fonction de votre profil de risque, de vos objectifs financiers et de l'…"
+  },
+  "site_spec": {
+    "slug": "optimiseur-de-repartition-d-actifs-pour-investi-32ad924b",
+    "theme": {
+      "name": "Ledger Slate",
+      "slug": "ledger-slate",
+      "eyebrow": "Trust Ledger",
+      "family": "ledger-slate",
+      "moods": [
+        "trustworthy",
+        "financial",
+        "dense",
+        "clear"
+      ],
+      "archetypes": [
+        "calculator",
+        "tool"
+      ],
+      "niches": [
+        "finance",
+        "insurance",
+        "budgeting",
+        "comparison",
+        "compliance"
+      ],
+      "keywords": [
+        "ledger",
+        "slate",
+        "trust",
+        "finance",
+        "clear"
+      ],
+      "token_index": [
+        "budgeting",
+        "calculator",
+        "clear",
+        "comparison",
+        "compliance",
+        "dense",
+        "finance",
+        "financial",
+        "insurance",
+        "ledger",
+        "slate",
+        "tool",
+        "trust",
+        "trustworthy"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Source+Sans+3:wght@400;500;600;700&display=swap",
+      "display_font": "\"Merriweather\", serif",
+      "body_font": "\"Source Sans 3\", sans-serif",
+      "layout": "split",
+      "card_style": "glass",
+      "button_style": "gradient",
+      "decor_style": "ribbons",
+      "hero_template": "1.08fr 0.92fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 3,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "16px",
+      "palette": {
+        "bg": "linear-gradient(180deg, #f8fafc 0%, #cbd5e1 100%)",
+        "surface": "rgba(255,255,255,0.92)",
+        "surface_border": "rgba(15,23,42,0.1)",
+        "text": "#0f172a",
+        "muted": "#475569",
+        "accent": "#0f766e",
+        "accent_alt": "#1d4ed8",
+        "hero_glow": "rgba(15, 118, 110, 0.12)",
+        "button_text": "#f8fafc",
+        "panel_alt": "rgba(255,255,255,0.88)",
+        "shadow": "0 22px 64px rgba(15, 23, 42, 0.08)",
+        "input_fill": "rgba(15,23,42,0.03)"
+      }
+    },
+    "structure": {
+      "name": "Precision Bento",
+      "slug": "precision-bento",
+      "hero_variant": "split",
+      "proof_variant": "metrics",
+      "section_order": [
+        "features",
+        "proof",
+        "seo",
+        "faq"
+      ],
+      "feature_columns": 4,
+      "faq_columns": 3,
+      "family": "precision-bento",
+      "moods": [
+        "clean",
+        "modular",
+        "premium"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator",
+        "generator"
+      ],
+      "niches": [
+        "saas",
+        "admin",
+        "compliance",
+        "analysis"
+      ],
+      "keywords": [
+        "bento",
+        "precision",
+        "cards",
+        "operator"
+      ],
+      "token_index": [
+        "admin",
+        "analysis",
+        "bento",
+        "calculator",
+        "cards",
+        "clean",
+        "compliance",
+        "faq",
+        "features",
+        "generator",
+        "metrics",
+        "modular",
+        "operator",
+        "precision",
+        "premium",
+        "proof",
+        "saas",
+        "seo",
+        "split",
+        "tool"
+      ]
+    },
+    "render_direction": "signal-bento",
+    "render_direction_name": "Signal Bento",
+    "page_blueprint": "briefing-board",
+    "page_blueprint_name": "Briefing Board",
+    "title": "Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers",
+    "tagline": "Votre Stratégie d'Investissement Personnalisée",
+    "description": "Déterminez la répartition idéale de votre portefeuille d",
+    "feature_prefix": "Bloc",
+    "action": "Générer les profils",
+    "cta_primary": "Calculer Ma Répartition",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "geo",
+        "label": "Ville ou région",
+        "type": "text",
+        "placeholder": "Lyon, Bordeaux, Lille",
+        "weight": 1.0
+      },
+      {
+        "id": "quantity",
+        "label": "Nombre de profils",
+        "type": "number",
+        "placeholder": "4",
+        "weight": 0.45
+      },
+      {
+        "id": "profile_type",
+        "label": "Type de profil",
+        "type": "select",
+        "options": [
+          {
+            "id": "customer",
+            "label": "Customer",
+            "multiplier": 1
+          },
+          {
+            "id": "b2b",
+            "label": "B2B",
+            "multiplier": 1
+          },
+          {
+            "id": "beta",
+            "label": "Beta tester",
+            "multiplier": 1
+          }
+        ],
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Signal Bento",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Profils générés",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Signal Bento",
+      "Calculer Ma Répartition",
+      "Profils générés",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Profils générés",
+    "result_unit": "EUR",
+    "runtime_mode": "profile_generator",
+    "page_variant": "console",
+    "faq_topic": "Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Optimiseur de Répartition d&#x27;Actifs pour Investisseurs Particuliers | Votre Stratégie d&#x27;Investissement Personnalisée</title>\n    <meta name=\"description\" content=\"Déterminez la répartition idéale de votre portefeuille d\">\n    <style>\n        :root {\n            --color-primary: #3A5A40; /* Dark Teal Green */\n            --color-secondary: #588157; /* Medium Forest Green */\n            --color-accent: #A3B18A; /* Light Olive Green */\n            --color-background: #DAD7CD; /* Light Khaki */\n            --color-text: #344E41; /* Darker Green for text */\n            --color-surface: #CED5BB; /* Lighter Khaki */\n            --color-border: #809B8B; /* Greyish Green */\n            --font-serif: 'Georgia', serif;\n            --font-sans: 'Arial', sans-serif;\n            --spacing-unit: 1rem;\n        }\n\n        body {\n            font-family: var(--font-sans);\n            line-height: 1.6;\n            color: var(--color-text);\n            background-color: var(--color-background);\n            margin: 0;\n            padding: 0;\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n        }\n\n        header {\n            background-color: var(--color-primary);\n            color: white;\n            width: 100%;\n            padding: calc(2 * var(--spacing-unit)) 0;\n            text-align: center;\n            box-shadow: 0 4px 8px rgba(0,0,0,0.1);\n        }\n\n        h1 {\n            font-family: var(--font-serif);\n            font-size: 2.8em;\n            margin: 0;\n            line-height: 1.1;\n        }\n\n        h2 {\n            font-family: var(--font-serif);\n            font-size: 2em;\n            color: var(--color-primary);\n            margin-top: calc(3 * var(--spacing-unit));\n            margin-bottom: var(--spacing-unit);\n            text-align: center;\n        }\n\n        h3 {\n            font-family: var(--font-sans);\n            font-size: 1.4em;\n            color: var(--color-secondary);\n            margin-top: calc(2 * var(--spacing-unit));\n            margin-bottom: calc(0.5 * var(--spacing-unit));\n        }\n\n        main {\n            width: 100%;\n            max-width: 1200px;\n            padding: calc(2 * var(--spacing-unit));\n            box-sizing: border-box;\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: calc(2 * var(--spacing-unit));\n        }\n\n        section {\n            background-color: var(--color-surface);\n            padding: calc(1.5 * var(--spacing-unit));\n            border-radius: 8px;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.05);\n        }\n\n        .section-full-width {\n            grid-column: 1 / -1;\n        }\n\n        p {\n            margin-bottom: var(--spacing-unit);\n        }\n\n        .cta-button {\n            display: inline-block;\n            background-color: var(--color-primary);\n            color: white;\n            padding: 0.8rem 1.8rem;\n            border-radius: 5px;\n            text-decoration: none;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n            margin-top: var(--spacing-unit);\n            border: none;\n            cursor: pointer;\n            font-size: 1.1em;\n        }\n\n        .cta-button:hover {\n            background-color: var(--color-secondary);\n        }\n\n        .cta-secondary {\n            background-color: var(--color-accent);\n            color: var(--color-text);\n            margin-left: var(--spacing-unit);\n        }\n\n        .cta-secondary:hover {\n            background-color: #8fa07f; /* Slightly darker accent */\n        }\n\n        form {\n            display: grid;\n            gap: var(--spacing-unit);\n            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n        }\n\n        .form-group {\n            display: flex;\n            flex-direction: column;\n        }\n\n        label {\n            font-weight: bold;\n            margin-bottom: 0.5rem;\n            color: var(--color-primary);\n        }\n\n        input[type=\"number\"],\n        select {\n            padding: 0.8rem;\n            border: 1px solid var(--color-border);\n            border-radius: 4px;\n            font-size: 1rem;\n            background-color: white;\n            color: var(--color-text);\n        }\n\n        input[type=\"range\"] {\n            width: 100%;\n            -webkit-appearance: none;\n            height: 8px;\n            background: var(--color-border);\n            border-radius: 5px;\n            outline: none;\n            opacity: 0.9;\n            transition: opacity .2s;\n        }\n\n        input[type=\"range\"]::-webkit-slider-thumb {\n            -webkit-appearance: none;\n            appearance: none;\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--color-primary);\n            cursor: pointer;\n        }\n\n        input[type=\"range\"]::-moz-range-thumb {\n            width: 20px;\n            height: 20px;\n            border-radius: 50%;\n            background: var(--color-primary);\n            cursor: pointer;\n        }\n\n        .input-with-value {\n            display: flex;\n            align-items: center;\n            gap: 10px;\n        }\n\n        #risk-value, #horizon-value {\n            min-width: 30px;\n            text-align: center;\n            font-weight: bold;\n            color: var(--color-primary);\n        }\n\n        #tool-result {\n            margin-top: calc(2 * var(--spacing-unit));\n            padding: calc(1.5 * var(--spacing-unit));\n            background-color: white;\n            border: 1px dashed var(--color-accent);\n            border-radius: 8px;\n            font-size: 1.1em;\n            color: var(--color-text);\n            min-height: 100px;\n            display: flex;\n            flex-direction: column;\n            justify-content: center;\n            align-items: center;\n            text-align: center;\n        }\n\n        #tool-result h3 {\n            color: var(--color-primary);\n            margin-top: 0;\n        }\n\n        .result-chart {\n            display: flex;\n            justify-content: center;\n            align-items: flex-end;\n            gap: 5px;\n            margin-top: var(--spacing-unit);\n            width: 100%;\n            height: 150px;\n            border-bottom: 1px solid var(--color-border);\n        }\n\n        .chart-bar {\n            background-color: var(--color-secondary);\n            width: 20%;\n            display: flex;\n            flex-direction: column;\n            justify-content: flex-end;\n            align-items: center;\n            color: white;\n            font-weight: bold;\n            font-size: 0.9em;\n            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);\n            border-radius: 3px 3px 0 0;\n            transition: height 0.5s ease-out;\n        }\n\n        .chart-bar span {\n            padding-bottom: 5px;\n        }\n\n        .chart-label {\n            font-size: 0.8em;\n            color: var(--color-text);\n            margin-top: 5px;\n            width: 100%;\n            text-align: center;\n        }\n\n        footer {\n            width: 100%;\n            background-color: var(--color-text);\n            color: var(--color-background);\n            text-align: center;\n            padding: calc(2 * var(--spacing-unit)) 0;\n            margin-top: calc(4 * var(--spacing-unit));\n            font-size: 0.9em;\n        }\n\n        footer a {\n            color: var(--color-accent);\n            text-decoration: none;\n        }\n\n        footer a:hover {\n            text-decoration: underline;\n        }\n\n        .seo-section {\n            background-color: var(--color-primary);\n            color: white;\n            padding: calc(2 * var(--spacing-unit));\n            border-radius: 8px;\n            margin-top: calc(3 * var(--spacing-unit));\n            grid-column: 1 / -1;\n        }\n        .seo-section h2 {\n            color: white;\n        }\n        .seo-section p, .seo-section ul {\n            color: var(--color-background);\n        }\n        .seo-section ul {\n            list-style-type: disc;\n            padding-left: 20px;\n        }\n        .seo-section li {\n            margin-bottom: 0.5rem;\n        }\n\n        @media (max-width: 768px) {\n            main {\n                grid-template-columns: 1fr;\n                padding: var(--spacing-unit);\n            }\n            h1 {\n                font-size: 2em;\n            }\n            h2 {\n                font-size: 1.6em;\n            }\n            form {\n                grid-template-columns: 1fr;\n            }\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com\">\n    <meta property=\"og:title\" content=\"Optimiseur de Répartition d&#x27;Actifs pour Investisseurs Particuliers\">\n    <meta property=\"og:description\" content=\"Déterminez la répartition idéale de votre portefeuille d\">\n    <meta property=\"og:url\" content=\"https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers\", \"description\": \"Déterminez la répartition idéale de votre portefeuille d\", \"url\": \"https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"optimiseur-de-repartition-d-actifs-pour-investi-32ad924b\" data-runtime-mode=\"profile_generator\">\n    <header>\n        <h1>Optimiseur de Répartition d'Actifs</h1>\n        <p>Déterminez la répartition idéale de votre portefeuille d'investissements.</p>\n    </header>\n\n    <main>\n        <section class=\"section-full-width\">\n            <h2>Votre Stratégie d'Investissement Personnalisée</h2>\n            <p>Notre outil vous aide à structurer un portefeuille équilibré entre actions, obligations, immobilier et autres actifs. Que vous soyez novice ou investisseur expérimenté, définissez une approche sur mesure en fonction de votre profil de risque et de vos ambitions.</p>\n            <p>Répondez à quelques questions simples pour obtenir une recommandation claire et optimisée.</p>\n        </section>\n\n        <section class=\"section-full-width\">\n            <h2>Calculez Votre Répartition Optimale</h2>\n            <form id=\"tool-form\">\n                <div class=\"form-group\">\n                    <label for=\"montant-initial\">Montant Initial à Investir (€)</label>\n                    <input type=\"number\" id=\"montant-initial\" value=\"10000\" min=\"100\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"apport-mensuel\">Apport Mensuel Moyen (€)</label>\n                    <input type=\"number\" id=\"apport-mensuel\" value=\"100\" min=\"0\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"horizon-placement\">Horizon de Placement (années)</label>\n                    <div class=\"input-with-value\">\n                        <input type=\"range\" id=\"horizon-placement\" min=\"1\" max=\"30\" value=\"10\" oninput=\"document.getElementById('horizon-value').innerText=this.value+' ans'\">\n                        <span id=\"horizon-value\">10 ans</span>\n                    </div>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"profil-risque\">Votre Profil de Risque</label>\n                    <div class=\"input-with-value\">\n                        <input type=\"range\" id=\"profil-risque\" min=\"1\" max=\"5\" value=\"3\" oninput=\"updateRiskValue(this.value)\">\n                        <span id=\"risk-value\">Modéré</span>\n                    </div>\n                    <small>1 = Très Prudent, 5 = Très Dynamique</small>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"objectif-financier\">Objectif Financier Principal</label>\n                    <select id=\"objectif-financier\">\n                        <option value=\"conservation\">Conservation du Capital</option>\n                        <option value=\"croissance_moderee\">Croissance Modérée</option>\n                        <option value=\"croissance_elevee\" selected>Croissance Élevée</option>\n                        <option value=\"revenu_complementaire\">Revenu Complémentaire</option>\n                    </select>\n                </div>\n                <div class=\"form-group\" style=\"grid-column: 1 / -1; text-align: center;\">\n                    <button type=\"submit\" id=\"tool-submit\" class=\"cta-button\">Calculer Ma Répartition</button>\n                    <button type=\"button\" class=\"cta-button cta-secondary\" data-affiliate-slot=\"learn-more\">En savoir plus</button>\n                </div>\n            </form>\n\n            <div id=\"tool-result\">\n                <h3 id=\"result-headline\">Votre Répartition d'Actifs Recommandée</h3>\n                <p>Les résultats s'afficheront ici après calcul.</p>\n                <div class=\"result-chart\" id=\"result-chart-container\"></div>\n            </div>\n        </section>\n\n        <section>\n            <h3>Pourquoi diversifier votre portefeuille ?</h3>\n            <p>La diversification est la clé pour réduire les risques et potentiellement améliorer les rendements de vos investissements. En répartissant vos fonds sur différentes classes d'actifs, vous vous protégez contre la volatilité d'un secteur unique.</p>\n            <p>Notre outil prend en compte ces principes pour vous offrir une stratégie robuste.</p>\n        </section>\n\n        <section>\n            <h3>Comprendre les classes d'actifs</h3>\n            <ul>\n                <li><strong>Actions :</strong> Potentiel de croissance élevé, mais risque plus important.</li>\n                <li><strong>Obligations :</strong> Moins risquées, offrent un revenu stable.</li>\n                <li><strong>Immobilier :</strong> Diversification et potentiel de rendement à long terme.</li>\n                <li><strong>Matières Premières :</strong> Couverture contre l'inflation, plus volatiles.</li>\n            </ul>\n            <p>Chaque classe réagit différemment aux conditions de marché. Une bonne répartition est cruciale.</p>\n        </section>\n\n        <section class=\"seo-section\">\n            <h2>Optimiser Votre Patrimoine : Guide Complet de la Répartition d'Actifs</h2>\n            <p>En France, l'investissement est une étape clé vers l'indépendance financière. Que vous cherchiez à préparer votre retraite, financer un projet immobilier ou simplement faire fructifier votre épargne, une stratégie d'allocation d'actifs bien pensée est indispensable.</p>\n            <p>Notre simulateur de portefeuille d'investissement est conçu pour les épargnants français. Il vous aide à :</p>\n            <ul>\n                <li><strong>Définir votre profil investisseur :</strong> Comprendre votre tolérance au risque est la première étape.</li>\n                <li><strong>Choisir les meilleures classes d'actifs :</strong> Actions CAC 40, obligations d'État, SCPI, ETF... comment les combiner ?</li>\n                <li><strong>Optimiser votre rendement :</strong> Adapter votre stratégie aux conditions de marché et à vos objectifs à court ou long terme.</li>\n                <li><strong>Anticiper l'évolution de votre patrimoine :</strong> Grâce à des projections claires et des ajustements stratégiques.</li>\n            </ul>\n            <p>Ne laissez plus le hasard guider vos placements. Utilisez notre outil gratuit pour bâtir un portefeuille solide et adapté à vos spécificités. Pour un placement financier réussi, une bonne allocation stratégique est primordiale.</p>\n            <p>Trouvez la meilleure répartition entre fonds euros, unités de compte, actions européennes ou américaines, immobilier locatif, assurance vie et PEA. Maîtrisez la gestion de votre capital pour atteindre vos objectifs financiers sereinement.</p>\n        </section>\n    </main>\n\n    <footer>\n        <p>&copy; 2023 Optimiseur d'Actifs. Tous droits réservés.</p>\n        <p><a href=\"#\">Mentions Légales</a> | <a href=\"#\">Contact</a></p>\n    </footer>\n\n    <script>\n        function updateRiskValue(value) {\n            const riskValueSpan = document.getElementById('risk-value');\n            switch (value) {\n                case '1': riskValueSpan.innerText = 'Très Prudent'; break;\n                case '2': riskValueSpan.innerText = 'Prudent'; break;\n                case '3': riskValueSpan.innerText = 'Modéré'; break;\n                case '4': riskValueSpan.innerText = 'Dynamique'; break;\n                case '5': riskValueSpan.innerText = 'Très Dynamique'; break;\n            }\n        }\n\n        document.getElementById('tool-form').addEventListener('submit', function(e) {\n            e.preventDefault();\n\n            const montantInitial = parseFloat(document.getElementById('montant-initial').value);\n            const apportMensuel = parseFloat(document.getElementById('apport-mensuel').value);\n            const horizonPlacement = parseInt(document.getElementById('horizon-placement').value);\n            const profilRisque = parseInt(document.getElementById('profil-risque').value);\n            const objectifFinancier = document.getElementById('objectif-financier').value;\n\n            let actions = 0;\n            let obligations = 0;\n            let immobilier = 0;\n            let divers = 0;\n\n            // Base allocation based on risk profile\n            switch (profilRisque) {\n                case 1: // Très Prudent\n                    obligations = 60; actions = 10; immobilier = 20; divers = 10; break;\n                case 2: // Prudent\n                    obligations = 45; actions = 20; immobilier = 25; divers = 10; break;\n                case 3: // Modéré\n                    obligations = 30; actions = 40; immobilier = 20; divers = 10; break;\n                case 4: // Dynamique\n                    obligations = 15; actions = 60; immobilier = 15; divers = 10; break;\n                case 5: // Très Dynamique\n                    obligations = 5; actions = 75; immobilier = 10; divers = 10; break;\n            }\n\n            // Adjustments based on horizon\n            if (horizonPlacement > 15) { // Longer horizon, more actions\n                actions += 10;\n                obligations -= 10;\n            } else if (horizonPlacement < 5) { // Shorter horizon, less actions\n                actions -= 10;\n                obligations += 10;\n            }\n            // Ensure percentages stay within bounds [0, 100] and sum to 100\n            actions = Math.max(0, Math.min(actions, 100));\n            obligations = Math.max(0, Math.min(obligations, 100));\n            immobilier = Math.max(0, Math.min(immobilier, 100));\n            divers = Math.max(0, Math.min(divers, 100));\n\n            // Normalize to 100%\n            let total = actions + obligations + immobilier + divers;\n            actions = (actions / total) * 100;\n            obligations = (obligations / total) * 100;\n            immobilier = (immobilier / total) * 100;\n            divers = (divers / total) * 100;\n\n            const resultDiv = document.getElementById('tool-result');\n            resultDiv.innerHTML = `\n                <h3>Votre Répartition d'Actifs Recommandée</h3>\n                <p>Voici la suggestion pour votre portefeuille :</p>\n                <div class=\"result-chart\" id=\"chart-container\"></div>\n                <p>Basé sur vos critères, cette répartition vise à optimiser votre potentiel de rendement tout en gérant le risque.</p>\n                <p><em>Note : Ceci est une simulation. Consultez un professionnel pour des conseils personnalisés.</em></p>\n            `;\n\n            const chartContainer = document.getElementById('chart-container');\n            const data = [\n                { label: 'Actions', percentage: actions, color: '#2C7873' },\n                { label: 'Obligations', percentage: obligations, color: '#66A59A' },\n                { label: 'Immobilier', percentage: immobilier, color: '#A1D2CE' },\n                { label: 'Divers', percentage: divers, color: '#E1E8E6' }\n            ];\n\n            chartContainer.innerHTML = ''; // Clear previous chart\n\n            data.forEach(item => {\n                const barWrapper = document.createElement('div');\n                barWrapper.style.width = '23%'; // To fit 4 bars with small gaps\n                barWrapper.style.display = 'flex';\n                barWrapper.style.flexDirection = 'column';\n                barWrapper.style.alignItems = 'center';\n\n                const bar = document.createElement('div');\n                bar.className = 'chart-bar';\n                bar.style.backgroundColor = item.color;\n                bar.style.height = '0'; // Start at 0 for animation\n                bar.style.transition = 'height 1s ease-out';\n                bar.innerHTML = `<span>${item.percentage.toFixed(0)}%</span>`;\n\n                const label = document.createElement('div');\n                label.className = 'chart-label';\n                label.innerText = item.label;\n\n                barWrapper.appendChild(bar);\n                barWrapper.appendChild(label);\n                chartContainer.appendChild(barWrapper);\n\n                // Animate bars after they are added to the DOM\n                setTimeout(() => {\n                    bar.style.height = `${item.percentage * 1.2}px`; // Scale height for visualization\n                }, 100);\n            });\n        });\n\n        // Initialize risk value text\n        document.addEventListener('DOMContentLoaded', () => {\n            updateRiskValue(document.getElementById('profil-risque').value);\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.removeAttribute(\"rel\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  let qaFinished = false;\n  let qaWatchdog = null;\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function primaryAction(form) {\n    if (!form) return null;\n    return (\n      document.getElementById(\"tool-submit\") ||\n      form.querySelector(\"#tool-submit\") ||\n      form.querySelector(\"[data-primary-action]\") ||\n      form.querySelector(\"button[type=submit]\") ||\n      form.querySelector(\"button\") ||\n      form.querySelector(\"input[type=submit]\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (type === \"hidden\" || type === \"submit\" || type === \"button\" || type === \"reset\" || type === \"image\" || type === \"file\") {\n      return;\n    }\n    const currentValue = normalize(field.value);\n    if (tag === \"select\") {\n      if (currentValue) return;\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      if (field.checked) return;\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      if (currentValue) return;\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      if (currentValue) return;\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      if (currentValue) return;\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      if (currentValue) return;\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      if (currentValue) return;\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      if (currentValue) return;\n      field.value = sampleNumber(field);\n      return;\n    }\n    if (currentValue) return;\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    if (qaFinished) return;\n    qaFinished = true;\n    if (qaWatchdog) {\n      window.clearTimeout(qaWatchdog);\n      qaWatchdog = null;\n    }\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n    window.setTimeout(function () {\n      try {\n        window.stop();\n      } catch (_error) {}\n    }, 0);\n  }\n\n  function installModalGuards() {\n    const noop = function () {};\n    const approve = function () { return true; };\n    const empty = function () { return \"\"; };\n    try { window.alert = noop; } catch (_error) {}\n    try { window.confirm = approve; } catch (_error) {}\n    try { window.prompt = empty; } catch (_error) {}\n  }\n\n  function triggerAction(form, action) {\n    try {\n      if (typeof form.requestSubmit === \"function\") {\n        form.requestSubmit(action || undefined);\n        return;\n      }\n    } catch (_error) {}\n    if (action && typeof action.click === \"function\") {\n      action.click();\n      return;\n    }\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    qaWatchdog = window.setTimeout(function () {\n      stamp(\"fail\", \"QA smoke timed out before the page reported a usable result.\", \"\");\n    }, 7000);\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    installModalGuards();\n    try {\n      form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke sample failed: ${error.message}` : \"QA smoke sample failed before submit.\", \"\");\n      return;\n    }\n    const action = primaryAction(form);\n    try {\n      triggerAction(form, action);\n    } catch (error) {\n      stamp(\"fail\", error && error.message ? `QA smoke submit failed: ${error.message}` : \"QA smoke submit failed.\", \"\");\n      return;\n    }\n    inspectResult(before, 10);\n  }\n\n  window.addEventListener(\"error\", function (event) {\n    const message = event && event.message ? event.message : \"JavaScript runtime error during QA smoke.\";\n    stamp(\"fail\", `QA smoke JS error: ${message}`, \"\");\n  }, { once: true });\n\n  window.addEventListener(\"unhandledrejection\", function (event) {\n    const reason = event && event.reason;\n    const detail = typeof reason === \"string\"\n      ? reason\n      : reason && reason.message\n        ? reason.message\n        : \"Unhandled promise rejection during QA smoke.\";\n    stamp(\"fail\", `QA smoke rejection: ${detail}`, \"\");\n  }, { once: true });\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}
