@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimiseur de Répartition d&#x27;Actifs pour Investisseurs Particuliers | Votre Stratégie d&#x27;Investissement Personnalisée</title>
+    <meta name="description" content="Déterminez la répartition idéale de votre portefeuille d">
+    <style>
+        :root {
+            --color-primary: #3A5A40; /* Dark Teal Green */
+            --color-secondary: #588157; /* Medium Forest Green */
+            --color-accent: #A3B18A; /* Light Olive Green */
+            --color-background: #DAD7CD; /* Light Khaki */
+            --color-text: #344E41; /* Darker Green for text */
+            --color-surface: #CED5BB; /* Lighter Khaki */
+            --color-border: #809B8B; /* Greyish Green */
+            --font-serif: 'Georgia', serif;
+            --font-sans: 'Arial', sans-serif;
+            --spacing-unit: 1rem;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            color: var(--color-text);
+            background-color: var(--color-background);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: white;
+            width: 100%;
+            padding: calc(2 * var(--spacing-unit)) 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8em;
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 2em;
+            color: var(--color-primary);
+            margin-top: calc(3 * var(--spacing-unit));
+            margin-bottom: var(--spacing-unit);
+            text-align: center;
+        }
+
+        h3 {
+            font-family: var(--font-sans);
+            font-size: 1.4em;
+            color: var(--color-secondary);
+            margin-top: calc(2 * var(--spacing-unit));
+            margin-bottom: calc(0.5 * var(--spacing-unit));
+        }
+
+        main {
+            width: 100%;
+            max-width: 1200px;
+            padding: calc(2 * var(--spacing-unit));
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(2 * var(--spacing-unit));
+        }
+
+        section {
+            background-color: var(--color-surface);
+            padding: calc(1.5 * var(--spacing-unit));
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .section-full-width {
+            grid-column: 1 / -1;
+        }
+
+        p {
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: var(--spacing-unit);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-secondary);
+        }
+
+        .cta-secondary {
+            background-color: var(--color-accent);
+            color: var(--color-text);
+            margin-left: var(--spacing-unit);
+        }
+
+        .cta-secondary:hover {
+            background-color: #8fa07f; /* Slightly darker accent */
+        }
+
+        form {
+            display: grid;
+            gap: var(--spacing-unit);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        input[type="number"],
+        select {
+            padding: 0.8rem;
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: white;
+            color: var(--color-text);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            -webkit-appearance: none;
+            height: 8px;
+            background: var(--color-border);
+            border-radius: 5px;
+            outline: none;
+            opacity: 0.9;
+            transition: opacity .2s;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            cursor: pointer;
+        }
+
+        .input-with-value {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #risk-value, #horizon-value {
+            min-width: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        #tool-result {
+            margin-top: calc(2 * var(--spacing-unit));
+            padding: calc(1.5 * var(--spacing-unit));
+            background-color: white;
+            border: 1px dashed var(--color-accent);
+            border-radius: 8px;
+            font-size: 1.1em;
+            color: var(--color-text);
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        #tool-result h3 {
+            color: var(--color-primary);
+            margin-top: 0;
+        }
+
+        .result-chart {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 5px;
+            margin-top: var(--spacing-unit);
+            width: 100%;
+            height: 150px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .chart-bar {
+            background-color: var(--color-secondary);
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.9em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            border-radius: 3px 3px 0 0;
+            transition: height 0.5s ease-out;
+        }
+
+        .chart-bar span {
+            padding-bottom: 5px;
+        }
+
+        .chart-label {
+            font-size: 0.8em;
+            color: var(--color-text);
+            margin-top: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        footer {
+            width: 100%;
+            background-color: var(--color-text);
+            color: var(--color-background);
+            text-align: center;
+            padding: calc(2 * var(--spacing-unit)) 0;
+            margin-top: calc(4 * var(--spacing-unit));
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .seo-section {
+            background-color: var(--color-primary);
+            color: white;
+            padding: calc(2 * var(--spacing-unit));
+            border-radius: 8px;
+            margin-top: calc(3 * var(--spacing-unit));
+            grid-column: 1 / -1;
+        }
+        .seo-section h2 {
+            color: white;
+        }
+        .seo-section p, .seo-section ul {
+            color: var(--color-background);
+        }
+        .seo-section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .seo-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+                padding: var(--spacing-unit);
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.6em;
+            }
+            form {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com">
+    <meta property="og:title" content="Optimiseur de Répartition d&#x27;Actifs pour Investisseurs Particuliers">
+    <meta property="og:description" content="Déterminez la répartition idéale de votre portefeuille d">
+    <meta property="og:url" content="https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers", "description": "Déterminez la répartition idéale de votre portefeuille d", "url": "https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="optimiseur-de-repartition-d-actifs-pour-investi-32ad924b" data-runtime-mode="profile_generator">
+    <header>
+        <h1>Optimiseur de Répartition d'Actifs</h1>
+        <p>Déterminez la répartition idéale de votre portefeuille d'investissements.</p>
+    </header>
+
+    <main>
+        <section class="section-full-width">
+            <h2>Votre Stratégie d'Investissement Personnalisée</h2>
+            <p>Notre outil vous aide à structurer un portefeuille équilibré entre actions, obligations, immobilier et autres actifs. Que vous soyez novice ou investisseur expérimenté, définissez une approche sur mesure en fonction de votre profil de risque et de vos ambitions.</p>
+            <p>Répondez à quelques questions simples pour obtenir une recommandation claire et optimisée.</p>
+        </section>
+
+        <section class="section-full-width">
+            <h2>Calculez Votre Répartition Optimale</h2>
+            <form id="tool-form">
+                <div class="form-group">
+                    <label for="montant-initial">Montant Initial à Investir (€)</label>
+                    <input type="number" id="montant-initial" value="10000" min="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="apport-mensuel">Apport Mensuel Moyen (€)</label>
+                    <input type="number" id="apport-mensuel" value="100" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="horizon-placement">Horizon de Placement (années)</label>
+                    <div class="input-with-value">
+                        <input type="range" id="horizon-placement" min="1" max="30" value="10" oninput="document.getElementById('horizon-value').innerText=this.value+' ans'">
+                        <span id="horizon-value">10 ans</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="profil-risque">Votre Profil de Risque</label>
+                    <div class="input-with-value">
+                        <input type="range" id="profil-risque" min="1" max="5" value="3" oninput="updateRiskValue(this.value)">
+                        <span id="risk-value">Modéré</span>
+                    </div>
+                    <small>1 = Très Prudent, 5 = Très Dynamique</small>
+                </div>
+                <div class="form-group">
+                    <label for="objectif-financier">Objectif Financier Principal</label>
+                    <select id="objectif-financier">
+                        <option value="conservation">Conservation du Capital</option>
+                        <option value="croissance_moderee">Croissance Modérée</option>
+                        <option value="croissance_elevee" selected>Croissance Élevée</option>
+                        <option value="revenu_complementaire">Revenu Complémentaire</option>
+                    </select>
+                </div>
+                <div class="form-group" style="grid-column: 1 / -1; text-align: center;">
+                    <button type="submit" id="tool-submit" class="cta-button">Calculer Ma Répartition</button>
+                    <button type="button" class="cta-button cta-secondary" data-affiliate-slot="learn-more">En savoir plus</button>
+                </div>
+            </form>
+
+            <div id="tool-result">
+                <h3 id="result-headline">Votre Répartition d'Actifs Recommandée</h3>
+                <p>Les résultats s'afficheront ici après calcul.</p>
+                <div class="result-chart" id="result-chart-container"></div>
+            </div>
+        </section>
+
+        <section>
+            <h3>Pourquoi diversifier votre portefeuille ?</h3>
+            <p>La diversification est la clé pour réduire les risques et potentiellement améliorer les rendements de vos investissements. En répartissant vos fonds sur différentes classes d'actifs, vous vous protégez contre la volatilité d'un secteur unique.</p>
+            <p>Notre outil prend en compte ces principes pour vous offrir une stratégie robuste.</p>
+        </section>
+
+        <section>
+            <h3>Comprendre les classes d'actifs</h3>
+            <ul>
+                <li><strong>Actions :</strong> Potentiel de croissance élevé, mais risque plus important.</li>
+                <li><strong>Obligations :</strong> Moins risquées, offrent un revenu stable.</li>
+                <li><strong>Immobilier :</strong> Diversification et potentiel de rendement à long terme.</li>
+                <li><strong>Matières Premières :</strong> Couverture contre l'inflation, plus volatiles.</li>
+            </ul>
+            <p>Chaque classe réagit différemment aux conditions de marché. Une bonne répartition est cruciale.</p>
+        </section>
+
+        <section class="seo-section">
+            <h2>Optimiser Votre Patrimoine : Guide Complet de la Répartition d'Actifs</h2>
+            <p>En France, l'investissement est une étape clé vers l'indépendance financière. Que vous cherchiez à préparer votre retraite, financer un projet immobilier ou simplement faire fructifier votre épargne, une stratégie d'allocation d'actifs bien pensée est indispensable.</p>
+            <p>Notre simulateur de portefeuille d'investissement est conçu pour les épargnants français. Il vous aide à :</p>
+            <ul>
+                <li><strong>Définir votre profil investisseur :</strong> Comprendre votre tolérance au risque est la première étape.</li>
+                <li><strong>Choisir les meilleures classes d'actifs :</strong> Actions CAC 40, obligations d'État, SCPI, ETF... comment les combiner ?</li>
+                <li><strong>Optimiser votre rendement :</strong> Adapter votre stratégie aux conditions de marché et à vos objectifs à court ou long terme.</li>
+                <li><strong>Anticiper l'évolution de votre patrimoine :</strong> Grâce à des projections claires et des ajustements stratégiques.</li>
+            </ul>
+            <p>Ne laissez plus le hasard guider vos placements. Utilisez notre outil gratuit pour bâtir un portefeuille solide et adapté à vos spécificités. Pour un placement financier réussi, une bonne allocation stratégique est primordiale.</p>
+            <p>Trouvez la meilleure répartition entre fonds euros, unités de compte, actions européennes ou américaines, immobilier locatif, assurance vie et PEA. Maîtrisez la gestion de votre capital pour atteindre vos objectifs financiers sereinement.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Optimiseur d'Actifs. Tous droits réservés.</p>
+        <p><a href="#">Mentions Légales</a> | <a href="#">Contact</a></p>
+    </footer>
+
+    <script>
+        function updateRiskValue(value) {
+            const riskValueSpan = document.getElementById('risk-value');
+            switch (value) {
+                case '1': riskValueSpan.innerText = 'Très Prudent'; break;
+                case '2': riskValueSpan.innerText = 'Prudent'; break;
+                case '3': riskValueSpan.innerText = 'Modéré'; break;
+                case '4': riskValueSpan.innerText = 'Dynamique'; break;
+                case '5': riskValueSpan.innerText = 'Très Dynamique'; break;
+            }
+        }
+
+        document.getElementById('tool-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const montantInitial = parseFloat(document.getElementById('montant-initial').value);
+            const apportMensuel = parseFloat(document.getElementById('apport-mensuel').value);
+            const horizonPlacement = parseInt(document.getElementById('horizon-placement').value);
+            const profilRisque = parseInt(document.getElementById('profil-risque').value);
+            const objectifFinancier = document.getElementById('objectif-financier').value;
+
+            let actions = 0;
+            let obligations = 0;
+            let immobilier = 0;
+            let divers = 0;
+
+            // Base allocation based on risk profile
+            switch (profilRisque) {
+                case 1: // Très Prudent
+                    obligations = 60; actions = 10; immobilier = 20; divers = 10; break;
+                case 2: // Prudent
+                    obligations = 45; actions = 20; immobilier = 25; divers = 10; break;
+                case 3: // Modéré
+                    obligations = 30; actions = 40; immobilier = 20; divers = 10; break;
+                case 4: // Dynamique
+                    obligations = 15; actions = 60; immobilier = 15; divers = 10; break;
+                case 5: // Très Dynamique
+                    obligations = 5; actions = 75; immobilier = 10; divers = 10; break;
+            }
+
+            // Adjustments based on horizon
+            if (horizonPlacement > 15) { // Longer horizon, more actions
+                actions += 10;
+                obligations -= 10;
+            } else if (horizonPlacement < 5) { // Shorter horizon, less actions
+                actions -= 10;
+                obligations += 10;
+            }
+            // Ensure percentages stay within bounds [0, 100] and sum to 100
+            actions = Math.max(0, Math.min(actions, 100));
+            obligations = Math.max(0, Math.min(obligations, 100));
+            immobilier = Math.max(0, Math.min(immobilier, 100));
+            divers = Math.max(0, Math.min(divers, 100));
+
+            // Normalize to 100%
+            let total = actions + obligations + immobilier + divers;
+            actions = (actions / total) * 100;
+            obligations = (obligations / total) * 100;
+            immobilier = (immobilier / total) * 100;
+            divers = (divers / total) * 100;
+
+            const resultDiv = document.getElementById('tool-result');
+            resultDiv.innerHTML = `
+                <h3>Votre Répartition d'Actifs Recommandée</h3>
+                <p>Voici la suggestion pour votre portefeuille :</p>
+                <div class="result-chart" id="chart-container"></div>
+                <p>Basé sur vos critères, cette répartition vise à optimiser votre potentiel de rendement tout en gérant le risque.</p>
+                <p><em>Note : Ceci est une simulation. Consultez un professionnel pour des conseils personnalisés.</em></p>
+            `;
+
+            const chartContainer = document.getElementById('chart-container');
+            const data = [
+                { label: 'Actions', percentage: actions, color: '#2C7873' },
+                { label: 'Obligations', percentage: obligations, color: '#66A59A' },
+                { label: 'Immobilier', percentage: immobilier, color: '#A1D2CE' },
+                { label: 'Divers', percentage: divers, color: '#E1E8E6' }
+            ];
+
+            chartContainer.innerHTML = ''; // Clear previous chart
+
+            data.forEach(item => {
+                const barWrapper = document.createElement('div');
+                barWrapper.style.width = '23%'; // To fit 4 bars with small gaps
+                barWrapper.style.display = 'flex';
+                barWrapper.style.flexDirection = 'column';
+                barWrapper.style.alignItems = 'center';
+
+                const bar = document.createElement('div');
+                bar.className = 'chart-bar';
+                bar.style.backgroundColor = item.color;
+                bar.style.height = '0'; // Start at 0 for animation
+                bar.style.transition = 'height 1s ease-out';
+                bar.innerHTML = `<span>${item.percentage.toFixed(0)}%</span>`;
+
+                const label = document.createElement('div');
+                label.className = 'chart-label';
+                label.innerText = item.label;
+
+                barWrapper.appendChild(bar);
+                barWrapper.appendChild(label);
+                chartContainer.appendChild(barWrapper);
+
+                // Animate bars after they are added to the DOM
+                setTimeout(() => {
+                    bar.style.height = `${item.percentage * 1.2}px`; // Scale height for visualization
+                }, 100);
+            });
+        });
+
+        // Initialize risk value text
+        document.addEventListener('DOMContentLoaded', () => {
+            updateRiskValue(document.getElementById('profil-risque').value);
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.removeAttribute("rel");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  let qaFinished = false;
+  let qaWatchdog = null;
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function primaryAction(form) {
+    if (!form) return null;
+    return (
+      document.getElementById("tool-submit") ||
+      form.querySelector("#tool-submit") ||
+      form.querySelector("[data-primary-action]") ||
+      form.querySelector("button[type=submit]") ||
+      form.querySelector("button") ||
+      form.querySelector("input[type=submit]")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (type === "hidden" || type === "submit" || type === "button" || type === "reset" || type === "image" || type === "file") {
+      return;
+    }
+    const currentValue = normalize(field.value);
+    if (tag === "select") {
+      if (currentValue) return;
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      if (field.checked) return;
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      if (currentValue) return;
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      if (currentValue) return;
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      if (currentValue) return;
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      if (currentValue) return;
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      if (currentValue) return;
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      if (currentValue) return;
+      field.value = sampleNumber(field);
+      return;
+    }
+    if (currentValue) return;
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    if (qaFinished) return;
+    qaFinished = true;
+    if (qaWatchdog) {
+      window.clearTimeout(qaWatchdog);
+      qaWatchdog = null;
+    }
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+    window.setTimeout(function () {
+      try {
+        window.stop();
+      } catch (_error) {}
+    }, 0);
+  }
+
+  function installModalGuards() {
+    const noop = function () {};
+    const approve = function () { return true; };
+    const empty = function () { return ""; };
+    try { window.alert = noop; } catch (_error) {}
+    try { window.confirm = approve; } catch (_error) {}
+    try { window.prompt = empty; } catch (_error) {}
+  }
+
+  function triggerAction(form, action) {
+    try {
+      if (typeof form.requestSubmit === "function") {
+        form.requestSubmit(action || undefined);
+        return;
+      }
+    } catch (_error) {}
+    if (action && typeof action.click === "function") {
+      action.click();
+      return;
+    }
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    qaWatchdog = window.setTimeout(function () {
+      stamp("fail", "QA smoke timed out before the page reported a usable result.", "");
+    }, 7000);
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    installModalGuards();
+    try {
+      form.querySelectorAll("input, select, textarea").forEach(applySample);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke sample failed: ${error.message}` : "QA smoke sample failed before submit.", "");
+      return;
+    }
+    const action = primaryAction(form);
+    try {
+      triggerAction(form, action);
+    } catch (error) {
+      stamp("fail", error && error.message ? `QA smoke submit failed: ${error.message}` : "QA smoke submit failed.", "");
+      return;
+    }
+    inspectResult(before, 10);
+  }
+
+  window.addEventListener("error", function (event) {
+    const message = event && event.message ? event.message : "JavaScript runtime error during QA smoke.";
+    stamp("fail", `QA smoke JS error: ${message}`, "");
+  }, { once: true });
+
+  window.addEventListener("unhandledrejection", function (event) {
+    const reason = event && event.reason;
+    const detail = typeof reason === "string"
+      ? reason
+      : reason && reason.message
+        ? reason.message
+        : "Unhandled promise rejection during QA smoke.";
+    stamp("fail", `QA smoke rejection: ${detail}`, "");
+  }, { once: true });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>
