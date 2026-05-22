@@ -1,0 +1,46 @@
+{
+  "name": "Optimiseur de Répartition d'Actifs pour Investisseurs Particuliers",
+  "description": "Déterminez la répartition idéale de votre portefeuille d",
+  "theme": "calculator",
+  "design_theme": "ledger-slate",
+  "structure_preset": "precision-bento",
+  "render_direction": "signal-bento",
+  "page_blueprint": "briefing-board",
+  "language": "fr",
+  "country": "FR",
+  "url": null,
+  "expected_url": "https://optimiseur-de-repartition-d-actifs-pour-investi-32ad924b.onrender.com",
+  "created": "2026-05-22T23:28:58.272389+00:00",
+  "owner_user_id": "user-1774822953462",
+  "owner_username": "admin",
+  "owner_display_name": "Administrator",
+  "provider_space_id": "provider-space",
+  "provider_space_name": "Provider space",
+  "status": "generated",
+  "run_id": "run-1779492508793",
+  "external_site_request_id": null,
+  "external_client_ref": null,
+  "external_source_label": null,
+  "source_type": "generated",
+  "publish_target": "render",
+  "mode": "production",
+  "github": {
+    "status": "pending"
+  },
+  "deployment": {
+    "status": "pending"
+  },
+  "qa": {
+    "status": "pending"
+  },
+  "features": [
+    "Hero pattern: split",
+    "Proof module: metrics",
+    "Design theme: Ledger Slate",
+    "Render direction: Signal Bento",
+    "Page blueprint: Briefing Board",
+    "Runtime mode: profile_generator",
+    "Generation mode: direct_html",
+    "Artifact rendered, awaiting QA and deployment"
+  ]
+}
